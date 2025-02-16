@@ -19,11 +19,35 @@ A PHP implementation of Douglas Crockford's JSMin with enhanced support for mode
   Converts unnecessary whitespace to single spaces (except in strings/regex).
 
 - 🚀 **Lightweight & Fast**  
-  Zero dependencies - pure PHP implementation.
+  Zero dependencies – pure PHP implementation.
 
-## Installation
+## Usage
 
-Via Composer:
+```php
+use YourNamespace\JSMin;
 
-```bash
-composer require yourname/jsmin
+$js = <<<JS
+// This is a comment
+const greeting = `Hello,
+World!`;
+console.log(/multi-line-regex/);
+JS;
+
+echo JSMin::minify($js);
+```
+
+### Output:
+
+```javascript
+const greeting=`Hello,\nWorld!`;console.log(/multi-line-regex/);
+```
+
+## Why Choose This?
+
+✅ **ES6+ Support** - Handles modern JavaScript features better than the original JSMin  
+🧩 **Context-Aware** - Smart handling of strings and regex literals  
+🔧 **Reliable** - Properly handles edge cases like:
+
+- Escape sequences (`\n`, `\"`, `\\`)
+- Nested comments
+- UTF-8 BOM markers
