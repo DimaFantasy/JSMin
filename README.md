@@ -23,6 +23,10 @@ A PHP implementation of Douglas Crockford's JSMin with enhanced support for mode
 
 ## Usage
 
+### Available Versions
+- `JSMin-1.1.5_en.php` – with English comments
+- `JSMin-1.1.5_ru.php` – with Russian comments
+
 ```php
 use YourNamespace\JSMin;
 
